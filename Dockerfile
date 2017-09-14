@@ -17,8 +17,9 @@ RUN set -xe \
         openssl-dev \
 
     # install run deps
-    # && apk add --no-cahce --virtual .run-deps \
-        # libpng \
+    && apk add --no-cahce --virtual .run-deps \
+        libpng \
+
     && docker-php-ext-configure gd \
         --with-webp-dir=/usr/include/ \
         --with-jpeg-dir=/usr/include/ \
