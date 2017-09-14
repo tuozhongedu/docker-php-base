@@ -34,7 +34,7 @@ RUN set -xe \
     && pecl install mongodb && docker-php-ext-enable mongodb \
     # && pecl install imagick && docker-php-ext-enable imagick \
 
-    && docker-php-ext-install -j$NPROC gd bcmath pdo_mysql mysqli \
+    && docker-php-ext-install -j$NPROC gd bcmath pdo_mysql mysqli
     # && apk del .build-deps
 
-EXPOSE 8080:8080
+# EXPOSE 8080:8080
