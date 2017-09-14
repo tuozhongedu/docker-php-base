@@ -7,7 +7,7 @@ RUN set -xe \
     # && sed -i "s/dl-cdn.alpinelinux.org/mirrors.aliyun.com/" /etc/apk/repositories \
 
     # install build deps
-    && apk add --no-cache --virtual .build-deps \
+    && apk --no-cache add --virtual .build-deps \
         libwebp-dev \
         freetype-dev \
         libpng-dev \
@@ -18,7 +18,7 @@ RUN set -xe \
         imagemagick-dev \
 
     # install run deps
-    && apk add --no-cahce --virtual .run-deps \
+    && apk --no-cache add --virtual .run-deps \
         libpng \
         libjpeg \
         libwebp \
