@@ -13,14 +13,20 @@ RUN set -xe \
         libpng-dev \
         libmcrypt-dev \
         libjpeg-turbo-dev \
+        autoconf \
 
     # install run deps
-    && apk add --no-cahce --virtual .run-deps \
-        libpng \
+    # && apk add --no-cahce --virtual .run-deps \
+        # libpng \
     && docker-php-ext-configure gd \
         --with-webp-dir=/usr/include/ \
         --with-jpeg-dir=/usr/include/ \
         --with-freetype-dir=/usr/include/ \
 
-    && docker-php-ext-install -j$NPROC gd
+    && pecl install mongodb \
 
+    && docker-php-ext-install -j$NPROC gd bcmath pdo_mysql mysqli \
+    && apk del .build-deps \
+    && rm /var/cache/apk/*
+
+EXPOSE 8080:8080
