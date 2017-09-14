@@ -27,6 +27,6 @@ RUN set -xe \
     && pecl install mongodb && docker-php-ext-enable mongodb \
 
     && docker-php-ext-install -j$NPROC gd bcmath pdo_mysql mysqli \
-    && apk del .build-deps \
+    && apk del .build-deps
 
 EXPOSE 8080:8080
