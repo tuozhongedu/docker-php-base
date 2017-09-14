@@ -40,4 +40,5 @@ RUN set -xe \
     && pecl install imagick && docker-php-ext-enable imagick \
 
     && docker-php-ext-install -j$NPROC opcache gd bcmath pdo_mysql mysqli \
-    && apk del .build-deps
+    && apk del .build-deps \
+    && rm -rf /tmp/*
