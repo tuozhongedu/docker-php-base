@@ -13,10 +13,14 @@ RUN set -xe \
         libpng-dev \
         libmcrypt-dev \
         libjpeg-turbo-dev \
-        autoconf \
         openssl-dev \
         imagemagick-dev \
         libltdl \
+        autoconf \
+        gcc \
+        g++ \
+        libtool \
+        make \
 
     # install run deps
     && apk --no-cache add --virtual .run-deps \
