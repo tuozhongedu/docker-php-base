@@ -4,7 +4,7 @@ ENV REFRESHED_AT=20170913
 
 RUN set -xe \
     && NPROC=$(grep -c ^processor /proc/cpuinfo 2>/dev/null || 1) \
-    && sed -i "s/dl-cdn.alpinelinux.org/mirrors.aliyun.com/" /etc/apk/repositories \
+    # && sed -i "s/dl-cdn.alpinelinux.org/mirrors.aliyun.com/" /etc/apk/repositories \
 
     # install build deps
     && apk add --no-cache --virtual .build-deps \
