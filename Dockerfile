@@ -16,6 +16,7 @@ RUN set -xe \
         autoconf \
         openssl-dev \
         imagemagick-dev \
+        libltdl \
 
     # install run deps
     && apk --no-cache add --virtual .run-deps \
