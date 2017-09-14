@@ -28,6 +28,5 @@ RUN set -xe \
 
     && docker-php-ext-install -j$NPROC gd bcmath pdo_mysql mysqli \
     && apk del .build-deps \
-    && rm /var/cache/apk/*
 
 EXPOSE 8080:8080
