@@ -14,6 +14,7 @@ RUN set -xe \
         libmcrypt-dev \
         libjpeg-turbo-dev \
         autoconf \
+        openssl-dev \
 
     # install run deps
     # && apk add --no-cahce --virtual .run-deps \
@@ -23,7 +24,7 @@ RUN set -xe \
         --with-jpeg-dir=/usr/include/ \
         --with-freetype-dir=/usr/include/ \
 
-    && pecl install mongodb \
+    && pecl install mongodb && docker-php-ext-enable mongodb \
 
     && docker-php-ext-install -j$NPROC gd bcmath pdo_mysql mysqli \
     && apk del .build-deps \
