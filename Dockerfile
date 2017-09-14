@@ -32,9 +32,9 @@ RUN set -xe \
         --with-freetype-dir=/usr/include/ \
 
     && pecl install mongodb && docker-php-ext-enable mongodb \
-    && pecl install imagick && docker-php-ext-enable imagick \
+    # && pecl install imagick && docker-php-ext-enable imagick \
 
     && docker-php-ext-install -j$NPROC gd bcmath pdo_mysql mysqli \
-    && apk del .build-deps
+    # && apk del .build-deps
 
 EXPOSE 8080:8080
