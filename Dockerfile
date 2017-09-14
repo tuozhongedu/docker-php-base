@@ -23,6 +23,7 @@ RUN set -xe \
         libjpeg \
         libwebp \
         freetype \
+        imagemagick \
 
     && docker-php-ext-configure gd \
         --with-webp-dir=/usr/include/ \
